@@ -10,6 +10,7 @@ export default function R({ children, ...props }) {
 
   return (
     <Canvas
+      frameloop="demand"
       linear={true}
       flat={true}
       gl={{ antialias: true, alpha: true }}
@@ -29,6 +30,7 @@ export default function R({ children, ...props }) {
         fov={75}
       />
       {children}
+      {/* <color attach="background" args={['#151515']} /> */}
     </Canvas>
   )
 }
