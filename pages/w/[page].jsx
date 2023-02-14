@@ -72,14 +72,14 @@ export default function Case() {
           <p>LOADING...</p>
         ) : (
           <>
-            <div className="p-v">
-              {element.vid && (
+            {element.vid && (
+              <div className="p-v">
                 <iframe
                   src={`https://player.vimeo.com/video/${element.vid}?loop=true&autoplay=true&muted=false&gesture=media&playsinline=true&byline=false&portrait=false&title=false&transparent=false`}
                   frameBorder="0"
                 ></iframe>
-              )}
-            </div>
+              </div>
+            )}
             {element.stills.map((still, i) => (
               <div className="p-v">
                 <Image
