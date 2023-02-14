@@ -3,19 +3,19 @@ import { useThree } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 import './ImageShaderMaterial'
 
-import { IMG_SRC_ARRAY } from '../lib/data'
+import { IMG_ARRAY } from '../lib/data'
 import { getDefaultImageDimensions } from '../utils/helpers'
 
 export default function ImageBlock({ index }) {
   const { viewport } = useThree()
   const { width, height } = viewport
-  const imgTexture = useTexture(IMG_SRC_ARRAY[index].src)
+  const imgTexture = useTexture(IMG_ARRAY[index].stills[0])
   const meshRef = useRef()
   let alpha = { value: 0.5 }
 
   const imgDim = {
-    x: IMG_SRC_ARRAY[index].width,
-    y: IMG_SRC_ARRAY[index].height,
+    x: IMG_ARRAY[index].stills[0].width,
+    y: IMG_ARRAY[index].stills[0].height,
   }
 
   const {

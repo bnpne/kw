@@ -1,24 +1,25 @@
 import Layout from '../components/Layout'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-
 import { IMG_ARRAY as el } from '../lib/data'
 import { useCaseStore } from '../lib/store'
-const Scene = dynamic(() => import('../components/Scene'), { ssr: false })
-
+import R from '../components/R'
+import Scene from '../components/Scene'
 export default function Home() {
   const [currentCard] = useCaseStore((state) => [state.currentCard])
 
   return (
-    <Layout>
-      <div className="c">
-        <div className="tc">
-          <div className="te">{el[currentCard].title}</div>
+    <>
+      <Layout>
+        <div className="c">
+          <div className="tc">
+            <div className="te">{el[currentCard].title}</div>
+          </div>
         </div>
-      </div>
-      <Link href={`/w/${el[currentCard].slug}`} className="p"></Link>
-    </Layout>
+        <Link href={`/w/${el[currentCard].slug}`} className="p"></Link>
+      </Layout>
+      <R>
+        <Scene />
+      </R>
+    </>
   )
 }
-
-Home.canvas = () => <Scene />

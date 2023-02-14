@@ -40,6 +40,9 @@ a:hover {
   height: 100%;
   width: 100%;
   padding: 8rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .m {
@@ -130,7 +133,9 @@ li {
   position: relative;
   height: 100%;
   min-height: 600px;
-  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  width: 80%;
   cursor: pointer;
 }
 
