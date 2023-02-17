@@ -135,6 +135,11 @@ li {
   height: auto;
   aspect-ratio: 16/9;
   cursor: pointer;
+  min-height: 700px;
+}
+
+.p-v img {
+  object-fit: cover;
 }
 
 .p-v iframe {

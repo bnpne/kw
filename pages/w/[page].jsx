@@ -95,6 +95,13 @@ export default function Case() {
                 />
               </div>
             ))}
+            {element.credits && (
+              <div>
+                {element.credits.map((c, i) => (
+                  <p key={i}>{c}</p>
+                ))}
+              </div>
+            )}
           </>
         )}
       </div>
